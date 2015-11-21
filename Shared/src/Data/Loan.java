@@ -19,6 +19,9 @@ public class Loan implements Serializable {
         this.dueDate = dueDate;
     }
 
+    public Loan() {
+    }
+
     public int getLoanNumber() {
         return this.loanNumber;
     }

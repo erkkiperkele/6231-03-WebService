@@ -16,6 +16,9 @@ public class CustomerInfo implements Serializable {
         this.loans = loans;
     }
 
+    public CustomerInfo() {
+    }
+
     public String getUserName() {
         return this.userName;
     }

@@ -15,6 +15,9 @@ public class Customer implements Serializable {
     private String password;
     private String email;
 
+    public Customer() {
+    }
+
     public String getEmail() {
 
         return email;

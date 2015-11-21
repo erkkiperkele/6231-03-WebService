@@ -14,6 +14,9 @@ public class Account implements Serializable {
         this.creditLimit = creditLimit;
     }
 
+    public Account() {
+    }
+
     public Customer getOwner() {
         return this.owner;
     }
