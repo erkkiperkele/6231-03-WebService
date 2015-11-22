@@ -80,7 +80,7 @@ public class BankWebService implements ICustomerServer, IManagerServer {
     @Override
     public Loan transferLoan(int loanId, Bank currentBank, Bank otherBank)
             throws TransferException {
-        return null;
+        return bankService.transferLoan(loanId, currentBank, otherBank);
     }
 
     @WebMethod

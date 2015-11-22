@@ -1,10 +1,21 @@
 package Data;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlType;
 import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "loan", propOrder = {
+        "loanNumber",
+        "customerAccountNumber",
+        "amount",
+        "dueDate"
+})
 public class Loan implements Serializable {
 
     private int loanNumber;

@@ -1,7 +1,21 @@
 package Data;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlType;
 import java.io.Serializable;
 
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "customer", propOrder = {
+        "accountNumber",
+        "bank",
+        "firstName",
+        "lastName",
+        "password",
+        "email",
+        "phone",
+        "id"
+})
 public class Customer implements Serializable {
 
     private String phone;
