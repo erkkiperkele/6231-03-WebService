@@ -1,6 +1,5 @@
 package WebServiceClient;
 
-import Data.*;
 import Contracts.ICustomerServer;
 import Contracts.IManagerServer;
 import Data.Bank;
@@ -8,7 +7,9 @@ import Data.Customer;
 import Data.CustomerInfo;
 import Data.Loan;
 import Exceptions.RecordNotFoundException;
-import WebServiceClient.FailedLoginException_Exception;
+import WebServiceClient.XMLExceptions.FailedLoginException_Exception;
+import WebServiceClient.XMLExceptions.RecordNotFoundException_Exception;
+import WebServiceClient.XMLExceptions.TransferException_Exception;
 
 //import javax.jws.WebService;
 import javax.security.auth.login.FailedLoginException;
