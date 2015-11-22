@@ -13,6 +13,7 @@ import WebServiceClient.FailedLoginException_Exception;
 //import javax.jws.WebService;
 import javax.security.auth.login.FailedLoginException;
 import java.util.Date;
+import java.util.List;
 
 public class BankWS implements ICustomerServer, IManagerServer {
 
@@ -95,8 +96,16 @@ public class BankWS implements ICustomerServer, IManagerServer {
 
     @Override
     public CustomerInfo[] getCustomersInfo(Bank bank) throws FailedLoginException {
-        return null;
+//        return null;
 
 //        return new CustomerInfo[0];
+        List<CustomerInfo> info;
+        try {
+            info = service.getCustomersInfo(bank);
+        } catch (FailedLoginException_Exception e) {
+            throw new FailedLoginException(e.getMessage());
+        }
+
+        return info.toArray(new CustomerInfo[info.size()]);
     }
 }

@@ -55,6 +55,10 @@
     <xs:sequence/>
   </xs:complexType>
 
+  <xs:complexType name="account">
+    <xs:sequence/>
+  </xs:complexType>
+
   <xs:complexType name="FailedLoginException">
     <xs:sequence>
       <xs:element name="message" type="xs:string" minOccurs="0"/>

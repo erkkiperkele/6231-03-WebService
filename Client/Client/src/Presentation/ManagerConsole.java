@@ -4,6 +4,7 @@ import Contracts.IManagerService;
 import Data.Bank;
 import Data.Customer;
 import Data.CustomerInfo;
+import Data.DataHelper;
 import Helpers.Console;
 import Services.ManagerService;
 import Services.SessionService;
@@ -90,7 +91,7 @@ public class ManagerConsole {
         CustomerInfo[] customersInfo = managerService.getCustomersInfo(bank);
 
         for (CustomerInfo info : customersInfo) {
-            System.out.println(info.toString());
+            System.out.println(DataHelper.toString(info));
         }
 
         SessionService.getInstance().log().info(

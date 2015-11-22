@@ -1,7 +1,12 @@
 package Data;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlType;
 import java.io.Serializable;
 
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "account")
 public class Account implements Serializable {
 
     private int accountNumber;
