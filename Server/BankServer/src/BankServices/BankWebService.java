@@ -16,7 +16,7 @@ import java.util.Date;
 @WebService(targetNamespace = "http://bank")
 public class BankWebService implements ICustomerServer, IManagerServer {
 
-    private IBankService bankService;
+    private BankService bankService;
 
     public BankWebService() {
     }
@@ -26,8 +26,8 @@ public class BankWebService implements ICustomerServer, IManagerServer {
         this.bankService = bankService;
         Bank bank = SessionService.getInstance().getBank();
 
-        Object implementor = new BankWebService();
-        String address = String.format("http://localhost:808%1$d/%2$s", bank.toInt(),  bank.name());
+        Object implementor = this;
+        String address = String.format("http://localhost:808%1$d/BankWebService", bank.toInt());
         System.out.println(address);
 
         Endpoint.publish(address, implementor);

@@ -4,8 +4,8 @@ import Contracts.IManagerService;
 import Data.Bank;
 import Data.Customer;
 import Data.CustomerInfo;
-import Transport.BankClientCorba;
 import Exceptions.RecordNotFoundException;
+import WebServiceClient.BankWS;
 
 import javax.security.auth.login.FailedLoginException;
 import java.text.DateFormat;
@@ -20,17 +20,17 @@ import java.util.Date;
 public class ManagerService implements IManagerService {
 
 
-    private BankClientCorba[] clients;
+    private BankWS[] clients;
 
     public ManagerService() {
         initializeClients();
     }
 
     private void initializeClients() {
-        this.clients = new BankClientCorba[3];
-        this.clients[Bank.Royal.toInt() - 1] = new BankClientCorba(Bank.Royal);
-        this.clients[Bank.National.toInt() - 1] = new BankClientCorba(Bank.National);
-        this.clients[Bank.Dominion.toInt() - 1] = new BankClientCorba(Bank.Dominion);
+        this.clients = new BankWS[3];
+        this.clients[Bank.Royal.toInt() - 1] = new BankWS(Bank.Royal);
+        this.clients[Bank.National.toInt() - 1] = new BankWS(Bank.National);
+        this.clients[Bank.Dominion.toInt() - 1] = new BankWS(Bank.Dominion);
     }
 
     @Override

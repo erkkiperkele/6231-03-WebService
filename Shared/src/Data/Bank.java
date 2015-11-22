@@ -1,5 +1,11 @@
 package Data;
 
+
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlType(name = "bank")
+@XmlEnum
 public enum Bank {
     Royal,
     National,

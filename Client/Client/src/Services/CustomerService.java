@@ -7,7 +7,7 @@ import Data.Bank;
 import Data.Customer;
 import Data.Loan;
 import Exceptions.TransferException;
-import Transport.BankClientCorba;
+import WebServiceClient.BankWS;
 
 import javax.security.auth.login.FailedLoginException;
 
@@ -17,17 +17,17 @@ import javax.security.auth.login.FailedLoginException;
  */
 public class CustomerService implements ICustomerService {
 
-    private ICustomerServer[] clients;
+    private BankWS[] clients;
 
     public CustomerService() {
         initializeCorbaClients();
     }
 
     private void initializeCorbaClients() {
-        this.clients = new BankClientCorba[3];
-        this.clients[Bank.Royal.toInt() - 1] = new BankClientCorba(Bank.Royal);
-        this.clients[Bank.National.toInt() - 1] = new BankClientCorba(Bank.National);
-        this.clients[Bank.Dominion.toInt() - 1] = new BankClientCorba(Bank.Dominion);
+        this.clients = new BankWS[3];
+        this.clients[Bank.Royal.toInt() - 1] = new BankWS(Bank.Royal);
+        this.clients[Bank.National.toInt() - 1] = new BankWS(Bank.National);
+        this.clients[Bank.Dominion.toInt() - 1] = new BankWS(Bank.Dominion);
     }
 
     @Override
