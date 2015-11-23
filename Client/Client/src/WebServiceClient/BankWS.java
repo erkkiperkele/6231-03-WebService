@@ -32,8 +32,6 @@ public class BankWS implements ICustomerServer, IManagerServer {
     @Override
     public int openAccount(Bank bank, String firstName, String lastName, String emailAddress, String phoneNumber, String password) {
 
-//        Bank mappedBank = WebServiceClient.Bank.Royal;
-
         int accountNumber = service.openAccount(bank, firstName, lastName, emailAddress, phoneNumber, password);
         System.out.println("Account Number: " + accountNumber);
         return accountNumber;
